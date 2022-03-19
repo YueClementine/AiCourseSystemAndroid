@@ -28,6 +28,10 @@ public class LoginNetServiceTest extends TestCase {
     public void testRegister() {
     }
 
-    public void testLogin() {
+    public void testLogin() throws IOException, JSONException {
+        User user = new User();
+        user.setUsername("test1");
+        user.setPassword("123");
+        LoginNetService.login(user);
     }
 }

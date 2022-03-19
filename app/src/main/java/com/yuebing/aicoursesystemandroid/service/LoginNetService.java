@@ -95,28 +95,16 @@ public class LoginNetService extends BaseNetService {
             return false;
         }
 
-
-
-        // 生成JSON
-        Gson gson=new Gson();
-        String json=gson.toJson(user);
-
         // POST请求
-        String result = post(Constant.LOGIN_URL, json);
+        String result = loginPost(Constant.LOGIN_URL, user.getUsername(), user.getPassword());
 
-//        // 结果处理
-//        Response response = result.first;
-//        String message = response.message();
-//
-//        if(response.code()==200){
-//            // 去除前缀
-//            String token=response.header("Authorization").substring(7);
-//            user.setToken(token);
-//            return true;
-//        }
-        /**
-         * TODO：set一个token
-         */
+        JSONObject jsonObject = new JSONObject(result);
+        JSONObject data = jsonObject.getJSONObject("data");
+
+        if (jsonObject.getInt("code") == 200) {
+            user.setToken(data.getString("token"));
+            return true;
+        }
         return false;
     }
 }
