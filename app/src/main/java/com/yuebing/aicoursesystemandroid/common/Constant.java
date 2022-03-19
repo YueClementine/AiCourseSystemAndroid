@@ -9,7 +9,7 @@ public class Constant {
     /**
      * 查询是否已注册URL
      */
-    public static final String IS_REGISTERED_URL="http://127.0.0.1/isRegistered";
+    public static final String IS_REGISTERED_URL="http://127.0.0.1:8888/isRegistered";
 
     /**
      * 登陆URL

@@ -40,15 +40,12 @@ public class LoginNetService extends BaseNetService {
         String json=gson.toJson(user);
 
         // POST请求
-        Pair<Response,String> result = post(Constant.IS_REGISTERED_URL,json);
-        Response response=result.first;
-        String data=result.second;
+        String result = post(Constant.IS_REGISTERED_URL,json);
 
         // 结果处理
-        if(response.code()==200){
-            JSONObject jsonObject=new JSONObject(data);
-            int code=jsonObject.getInt("code");
-
+        if(!result.isEmpty()){
+            JSONObject jsonObject = new JSONObject(result);
+            int code = jsonObject.getInt("code");
             return code != 200;
         }
         return false;
@@ -72,18 +69,16 @@ public class LoginNetService extends BaseNetService {
         String json=gson.toJson(user);
 
         // POST请求
-        Pair<Response,String> result= post(Constant.REGISTER_URL,json);
+        String result= post(Constant.REGISTER_URL,json);
 
-        // 结果处理
-        Response response=result.first;
-        String data=result.second;
-        String message=response.message();
 
-        if(response.code()==200){
-            JSONObject jsonObject=new JSONObject(data);
-            int code=jsonObject.getInt("code");
 
-            return code==200?true:false;
+        if(!result.isEmpty()){
+            JSONObject jsonObject=new JSONObject(result);
+
+            int code = jsonObject.getInt("code");
+
+            return code == 200;
         }
         return false;
     }
@@ -107,18 +102,21 @@ public class LoginNetService extends BaseNetService {
         String json=gson.toJson(user);
 
         // POST请求
-        Pair<Response,String> result=post(Constant.LOGIN_URL,json);
+        String result = post(Constant.LOGIN_URL, json);
 
-        // 结果处理
-        Response response=result.first;
-        String message=response.message();
-
-        if(response.code()==200){
-            // 去除前缀
-            String token=response.header("Authorization").substring(7);
-            user.setToken(token);
-            return true;
-        }
+//        // 结果处理
+//        Response response = result.first;
+//        String message = response.message();
+//
+//        if(response.code()==200){
+//            // 去除前缀
+//            String token=response.header("Authorization").substring(7);
+//            user.setToken(token);
+//            return true;
+//        }
+        /**
+         * TODO：set一个token
+         */
         return false;
     }
 }

@@ -22,7 +22,7 @@ public class BaseNetService {
      * @return 响应结果
      * @throws IOException 输入输出异常
      */
-    protected static Pair<Response,String> post(String url, String json) throws IOException {
+    protected static String post(String url, String json) throws IOException {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = RequestBody.create(json, Constant.JSON);
 
@@ -35,7 +35,7 @@ public class BaseNetService {
             if(response.code()==200){
                 data=response.body().string();
             }
-            return new Pair<>(response,data);
+            return data;
         }
     }
 
