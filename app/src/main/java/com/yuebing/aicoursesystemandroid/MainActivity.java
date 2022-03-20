@@ -1,19 +1,26 @@
 package com.yuebing.aicoursesystemandroid;
 
-import androidx.annotation.Nullable;
+import android.content.Intent;
+import android.os.Handler;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.yuebing.aicoursesystemandroid.service.LoginNetService;
 
-import org.jetbrains.annotations.NonNls;
+import com.yuebing.aicoursesystemandroid.task.LoginTask;
+import com.yuebing.aicoursesystemandroid.ui.HelloActivity;
 
-import lombok.NonNull;
+
+
+
 import lombok.SneakyThrows;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,11 +50,40 @@ public class MainActivity extends AppCompatActivity {
                 String username = tv_username.getText().toString();
                 String password = tv_password.getText().toString();
 
-                String token = LoginNetService.login(username, password);
+
+                new Thread(new LoginTask(username, password, handler)).start();
             }
         });
 
     }
+    /**
+     * UI线程更新处理器
+     */
+    private Handler handler = new Handler(new Handler.Callback() {
+
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+
+            //抽取异常信息
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            //获取认证状态
+            boolean isAuthorized = bundle.getBoolean("isAuthorized");
+
+            if (isAuthorized) {
+                Intent intent = new Intent(getApplicationContext(), HelloActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+            }
+
+
+            return true;
+        }
+    });
 
 
 }
