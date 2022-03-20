@@ -85,26 +85,27 @@ public class LoginNetService extends BaseNetService {
 
     /**
      * 登陆
+     *
      * @param user 用户
      * @return 是否成功登陆
-     * @throws IOException 输入输出异常
+     * @throws IOException   输入输出异常
      * @throws JSONException JSON解析异常
      */
-    public static boolean login(User user) throws IOException, JSONException {
-        if(user.getUsername()==null||user.getPassword()==null){
-            return false;
+    public static String login(String username, String password) throws IOException, JSONException {
+
+        if (username == null || password == null) {
+            return null;
         }
 
         // POST请求
-        String result = loginPost(Constant.LOGIN_URL, user.getUsername(), user.getPassword());
-
+        String result = loginPost(Constant.LOGIN_URL, username, password);
         JSONObject jsonObject = new JSONObject(result);
         JSONObject data = jsonObject.getJSONObject("data");
 
         if (jsonObject.getInt("code") == 200) {
-            user.setToken(data.getString("token"));
-            return true;
+            return data.getString("token");
         }
-        return false;
+
+        return null;
     }
 }
