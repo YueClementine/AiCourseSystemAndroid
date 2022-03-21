@@ -22,4 +22,6 @@
     <color name="middleGreyBlue">#191970</color>
     <color name="colorPayHint">#999999</color>
     <color name="colorScreenBackground">#EEEEEE</color>
+    <color name="colorButtonPressed">#A8E4AB</color>
+
 </resources>

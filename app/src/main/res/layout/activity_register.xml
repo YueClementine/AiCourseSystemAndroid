@@ -11,7 +11,8 @@
         android:layout_height="35dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        app:color_normal="@color/colorAreaCode"
+        app:color_normal="@color/colorDisabledButton"
+        app:color_pressed="#A8E4AB"
         app:corner="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_roleSelect"
@@ -19,35 +20,45 @@
         app:textColor="@color/black"
         app:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/tv_registerUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="TextView"
+    <EditText
+        android:id="@+id/tv_registerUserid"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+        android:hint="学号/教职工号"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_teacher" />
 
-    <TextView
-        android:id="@+id/tv_registerPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/tv_registerUsername"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:text="TextView"
+        android:layout_marginEnd="30dp"
+        android:hint="用户名"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_registerUserid" />
+
+    <EditText
+        android:id="@+id/tv_registerPassword"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="密码"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_registerUsername" />
-
-    <Button
-        android:id="@+id/bt_registerConfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="注册"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_registerPassword" />
 
     <TextView
         android:id="@+id/tv_writeurinfo"
@@ -78,11 +89,26 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         app:color_normal="@color/colorDisabledButton"
+        app:color_pressed="#A8E4AB"
         app:corner="10dp"
         app:layout_constraintStart_toEndOf="@+id/bt_teacher"
         app:layout_constraintTop_toBottomOf="@+id/tv_roleSelect"
         app:text="学生"
         app:textColor="@color/black"
+        app:textSize="16sp" />
+
+    <top.androidman.SuperButton
+        android:id="@+id/bt_registerConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:color_normal="@color/middleGreyBlue"
+        app:corner="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:text="立即注册"
+        app:textColor="@color/colorBackground"
         app:textSize="16sp" />
 
     <TextView
