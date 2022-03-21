@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         tv_username = findViewById(R.id.loginUsername);
         tv_password = findViewById(R.id.loginPassword);
+        tv_register = findViewById(R.id.tv_registerEnter);
 
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override

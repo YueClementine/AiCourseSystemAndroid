@@ -5,6 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <top.androidman.SuperButton
+        android:id="@+id/bt_teacher"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        app:color_normal="@color/colorAreaCode"
+        app:corner="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_roleSelect"
+        app:text="老师"
+        app:textColor="@color/black"
+        app:textSize="16sp" />
+
     <TextView
         android:id="@+id/tv_registerUsername"
         android:layout_width="wrap_content"
@@ -29,8 +43,57 @@
         android:id="@+id/bt_registerConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="72dp"
         android:text="注册"
-        app:layout_constraintTop_toBottomOf="@+id/tv_registerPassword"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_registerPassword" />
+
+    <TextView
+        android:id="@+id/tv_writeurinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:text="请填写你的信息"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:text="开启你的AI学习之旅"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_writeurinfo" />
+
+    <top.androidman.SuperButton
+        android:id="@+id/bt_student"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:color_normal="@color/colorDisabledButton"
+        app:corner="10dp"
+        app:layout_constraintStart_toEndOf="@+id/bt_teacher"
+        app:layout_constraintTop_toBottomOf="@+id/tv_roleSelect"
+        app:text="学生"
+        app:textColor="@color/black"
+        app:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_roleSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:text="身份"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
