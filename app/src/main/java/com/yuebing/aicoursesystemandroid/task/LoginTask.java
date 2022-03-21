@@ -30,8 +30,10 @@ public class LoginTask implements Runnable {
             Bundle bundle = new Bundle();
             if (token.isEmpty()) {
                 bundle.putBoolean("isAuthorized", false);
+            }else {
+                bundle.putBoolean("isAuthorized", true);
             }
-            bundle.putBoolean("isAuthorized", true);
+
             bundle.putString("token", token);
 
             Message message = new Message();

@@ -1,13 +1,19 @@
 package com.yuebing.aicoursesystemandroid.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.yuebing.aicoursesystemandroid.MainActivity;
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.model.User;
 import com.yuebing.aicoursesystemandroid.task.RegisterTask;
@@ -63,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setUserid(userid);
                 user.setSex(0);
 
-                new Thread(new RegisterTask(user)).start();
+                new Thread(new RegisterTask(user, handler)).start();
             }
         });
 
@@ -93,7 +99,35 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+    private Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+
+            //抽取异常信息
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            //获取注册状态
+            boolean isSuccess = bundle.getBoolean("isSuccess");
+
+            if (isSuccess) {
+                Toast.makeText(getApplication(), "注册成功", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+            }
+
+            return true;
+        }
+
+    });
 
 
 }
