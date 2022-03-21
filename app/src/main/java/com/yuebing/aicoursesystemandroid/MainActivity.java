@@ -17,8 +17,7 @@ import android.widget.Toast;
 
 import com.yuebing.aicoursesystemandroid.task.LoginTask;
 import com.yuebing.aicoursesystemandroid.ui.HelloActivity;
-
-
+import com.yuebing.aicoursesystemandroid.ui.RegisterActivity;
 
 
 import lombok.SneakyThrows;
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText tv_username;
     private EditText tv_password;
+    private TextView tv_register;
     private Button bt_loginConfirm;
 
     @Override
@@ -40,8 +40,15 @@ public class MainActivity extends AppCompatActivity {
         tv_username = findViewById(R.id.loginUsername);
         tv_password = findViewById(R.id.loginPassword);
 
+        tv_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
         bt_loginConfirm = findViewById(R.id.loginConfirm);
-
+        bt_loginConfirm.setText("登录");
         bt_loginConfirm.setOnClickListener(new View.OnClickListener() {
             @SneakyThrows
             @Override
