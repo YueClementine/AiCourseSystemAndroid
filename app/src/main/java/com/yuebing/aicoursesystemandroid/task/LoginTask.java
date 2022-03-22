@@ -1,6 +1,7 @@
 package com.yuebing.aicoursesystemandroid.task;
 
 import com.google.gson.JsonIOException;
+import com.yuebing.aicoursesystemandroid.model.User;
 import com.yuebing.aicoursesystemandroid.service.LoginNetService;
 
 import org.json.JSONException;
@@ -26,7 +27,9 @@ public class LoginTask implements Runnable {
     @Override
     public void run() {
         try {
-            String token = LoginNetService.login(username, password);
+            User user = LoginNetService.login(username, password);
+            String token = user.getToken();
+            int role = user.getRole();
             Bundle bundle = new Bundle();
             if (token.isEmpty()) {
                 bundle.putBoolean("isAuthorized", false);
@@ -35,6 +38,7 @@ public class LoginTask implements Runnable {
             }
 
             bundle.putString("token", token);
+            bundle.putInt("role", role);
 
             Message message = new Message();
             message.setData(bundle);

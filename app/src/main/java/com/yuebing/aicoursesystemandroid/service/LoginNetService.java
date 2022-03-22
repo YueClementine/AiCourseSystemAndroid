@@ -1,8 +1,6 @@
 package com.yuebing.aicoursesystemandroid.service;
 
 
-import android.util.Pair;
-
 import com.google.gson.Gson;
 import com.yuebing.aicoursesystemandroid.common.Constant;
 import com.yuebing.aicoursesystemandroid.model.User;
@@ -12,8 +10,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-
-import okhttp3.Response;
 
 /**
  * 登陆网络服务
@@ -91,7 +87,7 @@ public class LoginNetService extends BaseNetService {
      * @throws IOException   输入输出异常
      * @throws JSONException JSON解析异常
      */
-    public static String login(String username, String password) throws IOException, JSONException {
+    public static User login(String username, String password) throws IOException, JSONException {
 
         if (username == null || password == null) {
             return null;
@@ -103,7 +99,10 @@ public class LoginNetService extends BaseNetService {
         JSONObject data = jsonObject.getJSONObject("data");
 
         if (jsonObject.getInt("code") == 200) {
-            return data.getString("token");
+            User user = new User();
+            user.setToken(data.getString("token"));
+            user.setRole(data.getInt("role"));
+            return user;
         }
 
         return null;

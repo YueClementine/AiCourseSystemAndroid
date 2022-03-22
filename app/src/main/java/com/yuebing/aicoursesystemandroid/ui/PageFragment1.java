@@ -16,7 +16,7 @@ public class PageFragment1 extends Fragment {
     @NonNull
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,@NonNull ViewGroup container,@NonNull Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tab1, container, false);
+        View view = inflater.inflate(R.layout.tabstudent, container, false);
         return view;
     }
 }

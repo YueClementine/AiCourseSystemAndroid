@@ -29,6 +29,12 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
     private Fragment mFrag2;
     private Fragment mFrag3;
 
+    //token
+    private String token;
+
+    //role
+    private int role;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,8 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_main);
-
+        token = getIntent().getStringExtra("token");
+        role = getIntent().getIntExtra("role", 1);
         initViews();//初始化控件
         initEvents();//初始化事件
         selectTab(0);//默认选中第一个Tab
@@ -55,13 +62,18 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 //设置第一页的ImageButton为绿色
                 mImg1.setBackgroundResource(R.mipmap.application_selected);
                 //如果第一页对应的Fragment没有实例化，则进行实例化，并显示出来
-                if (mFrag1 == null) {
-                    mFrag1 = new PageFragment1();
-                    transaction.add(R.id.id_content, mFrag1);
-                } else {
-                    //如果第一页对应的Fragment已经实例化，则直接显示出来
-                    transaction.show(mFrag1);
+                if(role == 1){
+                    if (mFrag1 == null) {
+                        mFrag1 = new PageFragment1();
+                        transaction.add(R.id.id_content, mFrag1);
+                    } else {
+                        //如果第一页对应的Fragment已经实例化，则直接显示出来
+                        transaction.show(mFrag1);
+                    }
+                }else{
+
                 }
+
                 break;
             case 1:
                 mImg2.setBackgroundResource(R.drawable.moment_selected);

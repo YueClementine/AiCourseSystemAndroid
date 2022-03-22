@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean handleMessage(@NonNull Message message) {
             Bundle bundle = message.getData();
-
+            String token = bundle.getString("token");
+            int role = bundle.getInt("role");
             //抽取异常信息
             if (bundle.getString("error") != null) {
                 Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
@@ -83,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (isAuthorized) {
                 Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
-                intent.putExtras(bundle);
+                intent.putExtra("token", token);
+                intent.putExtra("role", role);
                 startActivity(intent);
 
             }
