@@ -30,6 +30,7 @@ public class LoginTask implements Runnable {
             User user = LoginNetService.login(username, password);
             String token = user.getToken();
             int role = user.getRole();
+            long userid = user.getUserid();
             Bundle bundle = new Bundle();
             if (token.isEmpty()) {
                 bundle.putBoolean("isAuthorized", false);
@@ -39,6 +40,7 @@ public class LoginTask implements Runnable {
 
             bundle.putString("token", token);
             bundle.putInt("role", role);
+            bundle.putLong("userid",userid);
 
             Message message = new Message();
             message.setData(bundle);

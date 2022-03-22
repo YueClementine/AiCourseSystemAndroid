@@ -7,7 +7,7 @@ import okhttp3.MediaType;
  */
 public class Constant {
 
-    public static final String FORE_URL = "http://10.133.167.120:8888";
+    public static final String FORE_URL = "http://192.168.45.20:8888";
     /**
      * 查询是否已注册URL
      */
@@ -22,6 +22,11 @@ public class Constant {
      * 登陆URL
      */
     public static final String LOGIN_URL = FORE_URL + "/login";
+
+    /**
+     * 创建课程
+     */
+    public static final String CREATE_COURSE = FORE_URL + "/createcourse";
 
     /**
      * BODY类型

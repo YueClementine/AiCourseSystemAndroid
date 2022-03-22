@@ -41,7 +41,7 @@ public class TeacherFragment extends Fragment {
                 Intent intent = new Intent(getContext(), CreateCourseActivity.class);
                 intent.putExtra("userid", getActivity().getIntent().getLongExtra("userid", 1L));
                 intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
-
+                intent.putExtra("username", getActivity().getIntent().getStringExtra("username"));
                 startActivity(intent);
             }
         });

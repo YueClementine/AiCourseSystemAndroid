@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("token", token);
                 intent.putExtra("role", role);
                 intent.putExtra("userid", userid);
+                intent.putExtra("username", tv_username.getText().toString());
                 startActivity(intent);
 
             }

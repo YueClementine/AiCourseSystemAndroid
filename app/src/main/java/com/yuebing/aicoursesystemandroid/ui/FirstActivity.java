@@ -36,6 +36,8 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
     private int role;
     //userid
     private long userid;
+    //username
+    private String username;
 
 
     @Override
@@ -47,6 +49,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         token = getIntent().getStringExtra("token");
         role = getIntent().getIntExtra("role", 1);
         userid = getIntent().getLongExtra("userid", 1L);
+        username = getIntent().getStringExtra("username");
         initViews();//初始化控件
         initEvents();//初始化事件
         selectTab(0);//默认选中第一个Tab
@@ -65,7 +68,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 //设置第一页的ImageButton为绿色
                 mImg1.setBackgroundResource(R.mipmap.application_selected);
                 //如果第一页对应的Fragment没有实例化，则进行实例化，并显示出来
-                if(role == 0){
+                if (role == 0) {
                     if (mFrag1 == null) {
                         mFrag1 = new PageFragment1();
                         transaction.add(R.id.id_content, mFrag1);
@@ -73,7 +76,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                         //如果第一页对应的Fragment已经实例化，则直接显示出来
                         transaction.show(mFrag1);
                     }
-                }else{
+                } else {
                     //老师和学生的页面作区分
                     if (mFrag1 == null) {
                         mFrag1 = new TeacherFragment();

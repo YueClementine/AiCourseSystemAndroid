@@ -102,6 +102,7 @@ public class LoginNetService extends BaseNetService {
             User user = new User();
             user.setToken(data.getString("token"));
             user.setRole(data.getInt("role"));
+            user.setUserid(data.getLong("userid"));
             return user;
         }
 

@@ -2,13 +2,18 @@ package com.yuebing.aicoursesystemandroid.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.yuebing.aicoursesystemandroid.R;
+import com.yuebing.aicoursesystemandroid.task.CreateCourseTask;
 
 import top.androidman.SuperButton;
 
@@ -20,6 +25,8 @@ public class CreateCourseActivity extends AppCompatActivity {
     //token
     private String token;
 
+    private String username;
+
     private SuperButton bt_confirm;
     private TextView tv_courseid;
 
@@ -30,20 +37,26 @@ public class CreateCourseActivity extends AppCompatActivity {
 
         userid = getIntent().getLongExtra("userid", 1L);
         token = getIntent().getStringExtra("token");
+        username = getIntent().getStringExtra("username");
+
 
         initView();
 
         bt_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PickStudentsActivity.class);
-                intent.putExtra("userid", userid);
-                intent.putExtra("token", token);
-                intent.putExtra("courseid", tv_courseid.getText().toString());
-                startActivity(intent);
+                new Thread(new CreateCourseTask(token, userid, Integer.parseInt(tv_courseid.getText().toString()), username, handler)).start();
+
+//                Intent intent = new Intent(getApplicationContext(), PickStudentsActivity.class);
+//                intent.putExtra("userid", userid);
+//                intent.putExtra("token", token);
+//                intent.putExtra("courseid", tv_courseid.getText().toString());
+//                startActivity(intent);
 
             }
         });
+
+
     }
 
 
@@ -51,4 +64,22 @@ public class CreateCourseActivity extends AppCompatActivity {
         bt_confirm = findViewById(R.id.bt_confirmcourseid);
         tv_courseid = findViewById(R.id.tv_courseid);
     }
+
+    private Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            Intent intent = new Intent(getApplicationContext(), PickStudentsActivity.class);
+            intent.putExtra("userid", userid);
+            intent.putExtra("token", token);
+            intent.putExtra("courseid", tv_courseid.getText().toString());
+            startActivity(intent);
+
+            return true;
+        }
+    });
 }
