@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.HelloActivity" />
+        <activity android:name=".ui.FirstActivity" />
         <activity android:name=".ui.RegisterActivity" />
     </application>
 

@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 
 import com.yuebing.aicoursesystemandroid.task.LoginTask;
-import com.yuebing.aicoursesystemandroid.ui.HelloActivity;
+import com.yuebing.aicoursesystemandroid.ui.FirstActivity;
 import com.yuebing.aicoursesystemandroid.ui.RegisterActivity;
 
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             boolean isAuthorized = bundle.getBoolean("isAuthorized");
 
             if (isAuthorized) {
-                Intent intent = new Intent(getApplicationContext(), HelloActivity.class);
+                Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
 
