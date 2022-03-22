@@ -62,7 +62,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 //设置第一页的ImageButton为绿色
                 mImg1.setBackgroundResource(R.mipmap.application_selected);
                 //如果第一页对应的Fragment没有实例化，则进行实例化，并显示出来
-                if(role == 1){
+                if(role == 0){
                     if (mFrag1 == null) {
                         mFrag1 = new PageFragment1();
                         transaction.add(R.id.id_content, mFrag1);
@@ -71,7 +71,14 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                         transaction.show(mFrag1);
                     }
                 }else{
-
+                    //老师和学生的页面作区分
+                    if (mFrag1 == null) {
+                        mFrag1 = new TeacherFragment();
+                        transaction.add(R.id.id_content, mFrag1);
+                    } else {
+                        //如果第一页对应的Fragment已经实例化，则直接显示出来
+                        transaction.show(mFrag1);
+                    }
                 }
 
                 break;
