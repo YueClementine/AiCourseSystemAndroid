@@ -134,7 +134,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
 
         //初始化四个ImageButton
-        mImg1 = (ImageButton) findViewById(R.id.id_tab_img1);
+        mImg1 = (ImageButton) findViewById(R.id.id_discuss);
         mImg2 = (ImageButton) findViewById(R.id.id_tab_img2);
         mImg3 = (ImageButton) findViewById(R.id.id_tab_img3);
 
