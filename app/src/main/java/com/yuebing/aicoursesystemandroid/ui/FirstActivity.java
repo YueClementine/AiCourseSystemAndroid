@@ -34,6 +34,8 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
     //role
     private int role;
+    //userid
+    private long userid;
 
 
     @Override
@@ -44,6 +46,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_main);
         token = getIntent().getStringExtra("token");
         role = getIntent().getIntExtra("role", 1);
+        userid = getIntent().getLongExtra("userid", 1L);
         initViews();//初始化控件
         initEvents();//初始化事件
         selectTab(0);//默认选中第一个Tab

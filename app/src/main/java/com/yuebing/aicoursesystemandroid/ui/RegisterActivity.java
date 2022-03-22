@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView tv_username;
 
     private int role;
-    private int userid;
+    private Long userid;
     private String username;
     private String password;
 
@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         bt_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userid = Integer.parseInt(tv_userId.getText().toString());
+                userid = Long.parseLong(tv_userId.getText().toString());
                 password = tv_password.getText().toString();
                 username = tv_username.getText().toString();
                 User user = new User();

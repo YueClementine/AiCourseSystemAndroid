@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundle = message.getData();
             String token = bundle.getString("token");
             int role = bundle.getInt("role");
+            Long userid = bundle.getLong("userid");
             //抽取异常信息
             if (bundle.getString("error") != null) {
                 Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
                 intent.putExtra("token", token);
                 intent.putExtra("role", role);
+                intent.putExtra("userid", userid);
                 startActivity(intent);
 
             }
