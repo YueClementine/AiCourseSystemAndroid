@@ -30,6 +30,8 @@ public class CreateCourseActivity extends AppCompatActivity {
     private String username;
 
     private SuperButton bt_confirm;
+
+    private TextView tv_coursename;
     private TextView tv_courseid;
 
     //role
@@ -51,7 +53,7 @@ public class CreateCourseActivity extends AppCompatActivity {
         bt_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new CreateCourseTask(token, userid, Integer.parseInt(tv_courseid.getText().toString()), role,username, handler)).start();
+                new Thread(new CreateCourseTask(token, userid, Integer.parseInt(tv_courseid.getText().toString()), role, username, tv_coursename.getText().toString(), handler)).start();
 
 //                Intent intent = new Intent(getApplicationContext(), PickStudentsActivity.class);
 //                intent.putExtra("userid", userid);
@@ -69,6 +71,7 @@ public class CreateCourseActivity extends AppCompatActivity {
     private void initView() {
         bt_confirm = findViewById(R.id.bt_confirmcourseid);
         tv_courseid = findViewById(R.id.tv_courseid);
+        tv_coursename = findViewById(R.id.tv_coursename);
     }
 
     private Handler handler = new Handler(new Handler.Callback() {

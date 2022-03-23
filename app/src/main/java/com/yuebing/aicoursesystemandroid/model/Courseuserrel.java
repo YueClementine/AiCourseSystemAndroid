@@ -9,5 +9,7 @@ public class Courseuserrel {
     private String username;
     private Integer role;
 
+    private String coursename;
+
 
 }

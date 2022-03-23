@@ -45,7 +45,7 @@ public class PickStudentsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 studentid = Long.parseLong(tv_studentidInput.getText().toString());
                 role = 0;
-                new Thread(new CreateCourseTask(token, studentid, courseid, role, "null", handler)).start();
+                new Thread(new CreateCourseTask(token, studentid, courseid, role, "null", "null", handler)).start();
 
             }
         });
