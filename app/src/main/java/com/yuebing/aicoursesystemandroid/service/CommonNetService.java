@@ -24,4 +24,9 @@ public class CommonNetService extends BaseNetService {
         }
         return null;
     }
+
+    public static String getByToken(String url, String token) throws IOException {
+        return getwithtoken(url, token);
+
+    }
 }

@@ -98,6 +98,23 @@ public class BaseNetService {
         }
     }
 
+    protected static String getwithtoken(String url, String token) throws IOException {
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("Authorization", token)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            String data = new String();
+            if (response.code() == 200) {
+                data = response.body().string();
+            }
+            return data;
+        }
+    }
+
     protected static Pair<Response,String> put(String url, String json) throws IOException {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = RequestBody.create(json, Constant.JSON);
