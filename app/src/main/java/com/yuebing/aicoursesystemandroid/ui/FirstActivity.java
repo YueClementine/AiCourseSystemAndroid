@@ -70,7 +70,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 //如果第一页对应的Fragment没有实例化，则进行实例化，并显示出来
                 if (role == 0) {
                     if (mFrag1 == null) {
-                        mFrag1 = new PageFragment1();
+                        mFrag1 = new StudentMainFragment();
                         transaction.add(R.id.id_content, mFrag1);
                     } else {
                         //如果第一页对应的Fragment已经实例化，则直接显示出来
@@ -91,7 +91,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
             case 1:
                 mImg2.setBackgroundResource(R.drawable.moment_selected);
                 if (mFrag2 == null) {
-                    mFrag2 = new PageFragment2();
+                    mFrag2 = new AiMomentFragment();
                     transaction.add(R.id.id_content, mFrag2);
                 } else {
                     transaction.show(mFrag2);
@@ -100,7 +100,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
             case 2:
                 mImg3.setBackgroundResource(R.mipmap.me_selected);
                 if (mFrag3 == null) {
-                    mFrag3 = new PageFragment3();
+                    mFrag3 = new ProfileFragment();
                     transaction.add(R.id.id_content, mFrag3);
                 } else {
                     transaction.show(mFrag3);

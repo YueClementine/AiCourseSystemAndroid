@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.yuebing.aicoursesystemandroid.R;
 
-public class PageFragment1 extends Fragment {
+public class StudentMainFragment extends Fragment {
 
     @NonNull
     @Override

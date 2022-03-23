@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.yuebing.aicoursesystemandroid.R;
 
-public class PageFragment2 extends Fragment {
+public class AiMomentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab2, container, false);

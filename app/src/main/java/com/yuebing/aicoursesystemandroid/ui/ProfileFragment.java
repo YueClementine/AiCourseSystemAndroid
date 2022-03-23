@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import com.yuebing.aicoursesystemandroid.R;
 
-public class PageFragment3 extends Fragment {
+public class ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -60,6 +60,10 @@ public class PickStudentsActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
                 return false;
             }
+            String data = bundle.getString("data");
+            String msg = bundle.getString("msg");
+
+            Toast.makeText(getApplicationContext(), "添加成功", Toast.LENGTH_SHORT).show();
 
 
             return true;
