@@ -46,7 +46,7 @@ public class CreateCourseTask implements Runnable {
             courseuserrel.setCourseid(courseid);
             courseuserrel.setRole(role);
             courseuserrel.setCoursename(coursename);
-
+            
             Gson gson = new Gson();
             String json = gson.toJson(courseuserrel);
             Response response = CommonNetService.postByToken(Constant.CREATE_COURSE, json, token);

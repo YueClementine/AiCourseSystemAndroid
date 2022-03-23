@@ -12,9 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.gson.Gson;
 import com.yuebing.aicoursesystemandroid.R;
-import com.yuebing.aicoursesystemandroid.model.Courseuserrel;
 import com.yuebing.aicoursesystemandroid.task.CreateCourseTask;
 
 import top.androidman.SuperButton;
@@ -70,7 +68,7 @@ public class CreateCourseActivity extends AppCompatActivity {
 
     private void initView() {
         bt_confirm = findViewById(R.id.bt_confirmcourseid);
-        tv_courseid = findViewById(R.id.tv_courseid);
+        tv_courseid = findViewById(R.id.tv_courseidListitem);
         tv_coursename = findViewById(R.id.tv_coursename);
     }
 
