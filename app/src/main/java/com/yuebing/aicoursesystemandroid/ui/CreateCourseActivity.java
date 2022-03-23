@@ -30,6 +30,9 @@ public class CreateCourseActivity extends AppCompatActivity {
     private SuperButton bt_confirm;
     private TextView tv_courseid;
 
+    //role
+    private int role;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,7 @@ public class CreateCourseActivity extends AppCompatActivity {
         userid = getIntent().getLongExtra("userid", 1L);
         token = getIntent().getStringExtra("token");
         username = getIntent().getStringExtra("username");
+        role = getIntent().getIntExtra("role", 1);
 
 
         initView();
@@ -45,7 +49,7 @@ public class CreateCourseActivity extends AppCompatActivity {
         bt_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new CreateCourseTask(token, userid, Integer.parseInt(tv_courseid.getText().toString()), username, handler)).start();
+                new Thread(new CreateCourseTask(token, userid, Integer.parseInt(tv_courseid.getText().toString()), role,username, handler)).start();
 
 //                Intent intent = new Intent(getApplicationContext(), PickStudentsActivity.class);
 //                intent.putExtra("userid", userid);
@@ -76,7 +80,7 @@ public class CreateCourseActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), PickStudentsActivity.class);
             intent.putExtra("userid", userid);
             intent.putExtra("token", token);
-            intent.putExtra("courseid", tv_courseid.getText().toString());
+            intent.putExtra("courseid", Integer.parseInt(tv_courseid.getText().toString()));
             startActivity(intent);
 
             return true;

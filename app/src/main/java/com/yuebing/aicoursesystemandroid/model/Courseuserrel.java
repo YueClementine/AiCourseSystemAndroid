@@ -7,5 +7,7 @@ public class Courseuserrel {
     private Long userid;
     private Integer courseid;
     private String username;
+    private Integer role;
+
 
 }

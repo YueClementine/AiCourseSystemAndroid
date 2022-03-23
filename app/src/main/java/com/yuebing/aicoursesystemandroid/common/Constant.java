@@ -7,7 +7,7 @@ import okhttp3.MediaType;
  */
 public class Constant {
 
-    public static final String FORE_URL = "http://192.168.45.20:8888";
+    public static final String FORE_URL = "http://10.133.169.250:8888";
     /**
      * 查询是否已注册URL
      */

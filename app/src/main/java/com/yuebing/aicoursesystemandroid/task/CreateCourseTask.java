@@ -20,9 +20,10 @@ public class CreateCourseTask implements Runnable {
     private Handler handler;
     private String username;
     private String token;
+    private int role;
 
-    public CreateCourseTask(String token, long userid, int courseid, String username, Handler handler) {
-
+    public CreateCourseTask(String token, long userid, int courseid, int role, String username, Handler handler) {
+        this.role = role;
         this.username = username;
         this.userid = userid;
         this.courseid = courseid;
@@ -37,6 +38,7 @@ public class CreateCourseTask implements Runnable {
             courseuserrel.setUsername(username);
             courseuserrel.setUserid(userid);
             courseuserrel.setCourseid(courseid);
+            courseuserrel.setRole(role);
             Gson gson = new Gson();
             String json = gson.toJson(courseuserrel);
             String result = CommonNetService.postByToken(Constant.CREATE_COURSE, json, token);

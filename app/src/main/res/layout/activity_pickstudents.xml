@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/tv_studentidinput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -38,7 +38,7 @@
         app:color_normal="@color/middleGreyBlue"
         app:color_pressed="#2C4EF6"
         app:corner="10dp"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toEndOf="@+id/tv_studentidinput"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:text="查询"
         app:textColor="@color/colorBackground"
@@ -53,5 +53,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_studentidinput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
