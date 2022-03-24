@@ -67,10 +67,10 @@ public class EditTaskActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
                 return false;
             }
-            String data = bundle.getString("data");
-            String msg = bundle.getString("msg");
+//            String data = bundle.getString("data");
 
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(getApplicationContext(), "创建成功", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getApplicationContext(), CreateTaskActivity.class);
             startActivity(intent);

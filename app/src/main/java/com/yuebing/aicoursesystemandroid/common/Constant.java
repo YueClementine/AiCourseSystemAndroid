@@ -37,6 +37,10 @@ public class Constant {
      *
      */
     public static final String CREATE_TASK = FORE_URL + "/teachertask/createTask";
+    /**
+     *
+     */
+    public static final String GET_TASK_BY_STUDENTID = FORE_URL + "/teachertask/getTaskByUserId?studentid=";
 
     /**
      * BODY类型
