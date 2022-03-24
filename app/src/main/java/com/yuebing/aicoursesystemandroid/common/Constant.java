@@ -34,6 +34,11 @@ public class Constant {
     public static final String GET_COURSE_BY_USERID = FORE_URL + "/teachertask/getCourseByTeacherId?teacherid=";
 
     /**
+     *
+     */
+    public static final String CREATE_TASK = FORE_URL + "/teachertask/createTask";
+
+    /**
      * BODY类型
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");

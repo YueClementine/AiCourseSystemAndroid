@@ -90,6 +90,7 @@ public class TeacherFragment extends Fragment {
 
             Intent intent = new Intent(getActivity().getApplicationContext(), CreateTaskActivity.class);
             intent.putExtra("courselist", result);
+            intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
 
             startActivity(intent);
 

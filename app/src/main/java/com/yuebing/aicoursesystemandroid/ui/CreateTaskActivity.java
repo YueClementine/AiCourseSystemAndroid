@@ -1,6 +1,9 @@
 package com.yuebing.aicoursesystemandroid.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -17,8 +20,8 @@ import java.util.List;
 public class CreateTaskActivity extends AppCompatActivity {
 
     private String courseListjson;
-
-
+    private List<Course> courseList = new ArrayList<>();
+    private String token;
     private ListView lv_course;
 
     @Override
@@ -29,9 +32,9 @@ public class CreateTaskActivity extends AppCompatActivity {
 
         lv_course = findViewById(R.id.lv_taskcourse);
 
-
+        token = getIntent().getStringExtra("token");
         courseListjson = getIntent().getStringExtra("courselist");
-        List<Course> courseList = new ArrayList<>();
+
         courseList = JsonListUtil.getObjectList(courseListjson, Course.class);
 
 
@@ -39,6 +42,23 @@ public class CreateTaskActivity extends AppCompatActivity {
 
         lv_course = findViewById(R.id.lv_taskcourse);
         lv_course.setAdapter(adapter);
+
+        lv_course.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Course course = courseList.get(position);
+                int courseid = course.getCourseid();
+                String coursename = course.getCoursename();
+                Intent intent = new Intent(getApplicationContext(), EditTaskActivity.class);
+
+                intent.putExtra("courseid", courseid);
+                intent.putExtra("coursename", coursename);
+                intent.putExtra("token", token);
+                startActivity(intent);
+
+
+            }
+        });
 
     }
 }

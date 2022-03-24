@@ -16,12 +16,13 @@
         <entry key="app/src/main/res/layout/bottom.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_courses.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/layout_createcourse.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/layout_edittask.xml" value="0.24738076849888208" />
         <entry key="app/src/main/res/layout/navigationbar.xml" value="0.33" />
         <entry key="app/src/main/res/layout/tab1.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/tab2.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/tab3.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/tabstudent.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/tabteacher.xml" value="0.27309782608695654" />
+        <entry key="app/src/main/res/layout/tabteacher.xml" value="0.33089693753071137" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14375" />
       </map>
