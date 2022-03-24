@@ -27,6 +27,7 @@
         <activity android:name=".ui.CreateTaskActivity" />
         <activity android:name=".ui.EditTaskActivity" />
         <activity android:name=".ui.StudentTaskActivity" />
+        <activity android:name=".ui.StudentTaskDiaplayActivity" />
     </application>
 
 </manifest>
