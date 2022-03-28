@@ -77,6 +77,8 @@ public class PickStudentsActivity extends AppCompatActivity {
             tv_pickedStudentId.setText("学号：" + cresult.getUserid().toString());
             tv_pickedStudentName.setText("姓名：" + cresult.getUsername());
 
+
+
             return true;
         }
     });

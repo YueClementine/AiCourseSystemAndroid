@@ -20,6 +20,7 @@ import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.model.Course;
 import com.yuebing.aicoursesystemandroid.task.CreateCourseTask;
 import com.yuebing.aicoursesystemandroid.task.GetCourseTask;
+import com.yuebing.aicoursesystemandroid.task.VideoListTask;
 import com.yuebing.aicoursesystemandroid.utils.JsonListUtil;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class TeacherFragment extends Fragment {
 
     private ImageButton im_create;
     private ImageButton im_task;
+    private ImageButton im_video;
 
 
     @NonNull
@@ -45,6 +47,7 @@ public class TeacherFragment extends Fragment {
         //获取控件
         im_create = getView().findViewById(R.id.id_createcourse);
         im_task = getView().findViewById(R.id.id_taskteacher);
+        im_video = getView().findViewById(R.id.id_videoteacher);
 
         // 创建课程
         im_create.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +70,14 @@ public class TeacherFragment extends Fragment {
             }
         });
 
+        //视频中心
+        im_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new VideoListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), videoHandler)).start();
+
+            }
+        });
 
 
 
@@ -90,6 +101,28 @@ public class TeacherFragment extends Fragment {
 
             Intent intent = new Intent(getActivity().getApplicationContext(), CreateTaskActivity.class);
             intent.putExtra("courselist", result);
+            intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
+
+            startActivity(intent);
+
+            return true;
+        }
+    });
+
+    private Handler videoHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            String result = bundle.getString("result");
+
+
+
+            Intent intent = new Intent(getActivity().getApplicationContext(), VideoCenterActivity.class);
+            intent.putExtra("videolist", result);
             intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
 
             startActivity(intent);

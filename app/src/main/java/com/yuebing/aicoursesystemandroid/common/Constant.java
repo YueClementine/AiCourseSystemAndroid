@@ -45,6 +45,16 @@ public class Constant {
     public static final String CONFIRM_TASK_STATUS = FORE_URL + "/teachertask/setTaskStatus?userid=";
 
     /**
+     * /teacherSearchVideoByToken
+     */
+    public static final String Teacher_Search_Video_By_Token = FORE_URL + "/teacherSearchVideoByToken";
+
+    /**
+     * 播放视频
+     */
+    public static final String Display_Video = FORE_URL + "/doc/video/";
+
+    /**
      * BODY类型
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");

@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     implementation 'top.androidman:superbutton:1.0.1'
+    implementation 'com.gitee.nurApplication:NurVideoPlayer:2.1.9'
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.json:json:20180813'
