@@ -34,6 +34,11 @@ public class Constant {
     public static final String GET_COURSE_BY_USERID = FORE_URL + "/teachertask/getCourseByTeacherId?teacherid=";
 
     /**
+     * 获取ppt
+     */
+    public static final String GET_PPT_BY_TOKEN = FORE_URL + "/getPptListByToken";
+
+    /**
      *
      */
     public static final String CREATE_TASK = FORE_URL + "/teachertask/createTask";
@@ -53,6 +58,11 @@ public class Constant {
      * 播放视频
      */
     public static final String Display_Video = FORE_URL + "/doc/video/";
+
+    /**
+     * 课件路径
+     */
+    public static final String File_Path = FORE_URL + "/doc/ppt/";
 
     /**
      * BODY类型

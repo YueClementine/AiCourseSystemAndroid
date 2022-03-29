@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.yuebing.aicoursesystemandroid.R;
-import com.yuebing.aicoursesystemandroid.model.TaskuserrelVO;
 import com.yuebing.aicoursesystemandroid.model.VideoDo;
 import com.yuebing.aicoursesystemandroid.utils.JsonListUtil;
 
@@ -33,7 +32,7 @@ public class VideoCenterActivity extends AppCompatActivity {
 
         videolistjson = getIntent().getStringExtra("videolist");
         videoDoList = JsonListUtil.getObjectList(videolistjson, VideoDo.class);
-        lv_videolist = findViewById(R.id.lv_videolist);
+        lv_videolist = findViewById(R.id.lv_pptlist);
 
         VideoCenterAdapter videoCenterAdapter = new VideoCenterAdapter(VideoCenterActivity.this, R.layout.item_video, videoDoList);
 

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,19 +16,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.yuebing.aicoursesystemandroid.R;
-import com.yuebing.aicoursesystemandroid.model.Course;
-import com.yuebing.aicoursesystemandroid.task.CreateCourseTask;
 import com.yuebing.aicoursesystemandroid.task.GetCourseTask;
+import com.yuebing.aicoursesystemandroid.task.PptListTask;
 import com.yuebing.aicoursesystemandroid.task.VideoListTask;
-import com.yuebing.aicoursesystemandroid.utils.JsonListUtil;
-
-import java.util.List;
 
 public class TeacherFragment extends Fragment {
 
     private ImageButton im_create;
     private ImageButton im_task;
     private ImageButton im_video;
+    private ImageButton im_ppt;
 
 
     @NonNull
@@ -48,6 +44,7 @@ public class TeacherFragment extends Fragment {
         im_create = getView().findViewById(R.id.id_createcourse);
         im_task = getView().findViewById(R.id.id_taskteacher);
         im_video = getView().findViewById(R.id.id_videoteacher);
+        im_ppt = getView().findViewById(R.id.id_pptteacher);
 
         // 创建课程
         im_create.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +76,13 @@ public class TeacherFragment extends Fragment {
             }
         });
 
+        im_ppt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new PptListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), pptHandler)).start();
+
+            }
+        });
 
 
 
@@ -130,6 +134,28 @@ public class TeacherFragment extends Fragment {
             return true;
         }
     });
+    private Handler pptHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            String result = bundle.getString("result");
+
+
+
+            Intent intent = new Intent(getActivity().getApplicationContext(), PptCenterActivity.class);
+            intent.putExtra("pptlist", result);
+            intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
+
+            startActivity(intent);
+
+            return true;
+        }
+    });
+
 
 
 }

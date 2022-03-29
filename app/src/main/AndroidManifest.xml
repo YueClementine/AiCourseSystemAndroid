@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
-
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +19,18 @@
         tools:replace="android:theme"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme.NoActionBar">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.yuebing.aicoursesystemandroid.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -38,6 +50,9 @@
         <activity android:name=".ui.StudentTaskDiaplayActivity" />
         <activity android:name=".ui.VideoViewTestActivity" />
         <activity android:name=".ui.VideoCenterActivity" />
+        <activity android:name=".ui.PptCenterActivity" />
     </application>
+    
+
 
 </manifest>

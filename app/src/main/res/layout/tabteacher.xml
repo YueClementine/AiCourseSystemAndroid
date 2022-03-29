@@ -280,7 +280,7 @@
                         android:layout_height="match_parent">
 
                         <ImageButton
-                            android:id="@+id/id_ppt"
+                            android:id="@+id/id_pptteacher"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginTop="10dp"
@@ -298,7 +298,7 @@
                             android:textColor="@color/colorLoginTitle"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/id_ppt" />
+                            app:layout_constraintTop_toBottomOf="@+id/id_pptteacher" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
