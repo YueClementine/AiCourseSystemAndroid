@@ -90,7 +90,7 @@ public class TeacherFragment extends Fragment {
         im_exam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new TeacherGetExamTask(getActivity().getIntent().getStringExtra("token"), examHandler));
+                new Thread(new TeacherGetExamTask(getActivity().getIntent().getStringExtra("token"), examHandler)).start();
             }
         });
 

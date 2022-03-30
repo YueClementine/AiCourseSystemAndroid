@@ -13,9 +13,10 @@
         android:layout_marginTop="30dp"
         android:text="您有1场考试待发布"
         android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:textSize="24sp" />
+        android:textSize="27sp" />
 
     <ListView
         android:id="@+id/lv_teacherpublishexam"

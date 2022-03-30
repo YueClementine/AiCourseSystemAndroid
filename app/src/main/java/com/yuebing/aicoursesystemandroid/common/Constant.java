@@ -80,6 +80,11 @@ public class Constant {
     public static final String Teacher_GET_EXAM_LIST = FORE_URL + "/teacherGetExamList";
 
     /**
+     * publish exam
+     */
+    public static final String PUBLISH_EXAM = FORE_URL + "/publishexam?examid=";
+
+    /**
      * BODY类型
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
