@@ -12,7 +12,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:text="您共有1套试卷待完成"
-        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

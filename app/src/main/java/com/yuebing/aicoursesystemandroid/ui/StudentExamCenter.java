@@ -57,7 +57,8 @@ public class StudentExamCenter extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 ExamUserRel examUserRel = examList.get(position);
-                new Thread(new QuestionTask(examUserRel.getExamid(), token, questionHandler));
+                new Thread(new QuestionTask(examUserRel.getExamid(), examUserRel.getExamname(), token, questionHandler)).start();
+
             }
         });
 
@@ -71,11 +72,14 @@ public class StudentExamCenter extends AppCompatActivity {
                 return false;
             }
             String result = bundle.getString("result");
-
+            String examname = bundle.getString("examname");
+            int examid = bundle.getInt("examid");
 
 
             Intent intent = new Intent(StudentExamCenter.this, QuestionListActivity.class);
+            intent.putExtra("examname", examname);
             intent.putExtra("questionlist", result);
+            intent.putExtra("examid", examid);
             intent.putExtra("token", getIntent().getStringExtra("token"));
 
             startActivity(intent);

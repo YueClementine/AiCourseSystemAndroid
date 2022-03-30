@@ -15,10 +15,12 @@ public class QuestionTask implements Runnable {
 
     private String token;
     private int examid;
+    private String examname;
 
     private Handler handler;
 
-    public QuestionTask(int examid, String token, Handler handler) {
+    public QuestionTask(int examid, String examname, String token, Handler handler) {
+        this.examname = examname;
         this.examid = examid;
 
         this.handler = handler;
@@ -30,11 +32,13 @@ public class QuestionTask implements Runnable {
 
         try {
 
-            String result = CommonNetService.getByToken(Constant.GET_QUESTION_LIST+examid, token);
+            String result = CommonNetService.getByToken(Constant.GET_QUESTION_LIST + examid, token);
 
 
             Bundle bundle = new Bundle();
             bundle.putString("result", result);
+            bundle.putString("examname", examname);
+            bundle.putInt("examid", examid);
             Message message = new Message();
             message.setData(bundle);
 

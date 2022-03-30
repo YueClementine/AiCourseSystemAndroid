@@ -24,6 +24,7 @@
     <color name="colorScreenBackground">#EEEEEE</color>
     <color name="colorButtonPressed">#A8E4AB</color>
     <color name="es_green">#01AE66</color>
-    <color name="greennormal">#074011</color>
+
+    <color name="bluenormal">#1381D8</color>
 
 </resources>

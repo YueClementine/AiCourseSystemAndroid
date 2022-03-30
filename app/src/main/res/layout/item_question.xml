@@ -23,7 +23,7 @@
             android:gravity="left"
             android:text="题干babababa"
             android:textColor="#000000"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,16 +39,18 @@
 
         <TextView
             android:id="@+id/tv_meta_A"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="6dp"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/sel_homework_checkbox_bg"
             android:gravity="center"
             android:text="A"
+            android:textColor="@color/bluenormal"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/tv_option1"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -62,7 +64,7 @@
             android:gravity="left"
             android:text="选项a balab"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +89,7 @@
             android:gravity="left"
             android:text="选项b balab"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,16 +97,18 @@
 
         <TextView
             android:id="@+id/tv_meta_B"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="6dp"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/sel_homework_checkbox_bg"
             android:gravity="center"
             android:text="B"
+            android:textColor="@color/bluenormal"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/tv_option2"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -114,18 +118,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/option2">
+
         <TextView
             android:id="@+id/tv_meta_C"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="6dp"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/sel_homework_checkbox_bg"
             android:gravity="center"
             android:text="C"
+            android:textColor="@color/bluenormal"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/tv_option3"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -139,7 +146,7 @@
             android:gravity="left"
             android:text="选项c balab"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -164,23 +171,26 @@
             android:gravity="left"
             android:text="选项d balab"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_meta_D"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="6dp"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/sel_homework_checkbox_bg"
             android:gravity="center"
             android:text="D"
+            android:textColor="@color/bluenormal"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/tv_option4"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

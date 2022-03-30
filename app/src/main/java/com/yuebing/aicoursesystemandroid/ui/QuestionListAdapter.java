@@ -71,28 +71,77 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
         viewHolder.let_optionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewHolder.let_optionA.setTextColor(Color.GREEN);
-                viewHolder.let_optionB.setTextColor(Color.BLACK);
+                viewHolder.let_optionA.setTextColor(Color.parseColor("#EEEEEE"));
+                viewHolder.let_optionB.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionC.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionD.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionA.setBackgroundResource(R.drawable.oval_4);
+                viewHolder.let_optionC.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionD.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionB.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                if (question.getCorrectop() == 1) {
+                    question.setQuestiontag(1);
+
+                }else {
+                    question.setQuestiontag(0);
+                }
             }
         });
         viewHolder.let_optionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewHolder.let_optionB.setTextColor(Color.GREEN);
-                viewHolder.let_optionA.setTextColor(Color.BLACK);
+                viewHolder.let_optionB.setTextColor(Color.parseColor("#EEEEEE"));
+                viewHolder.let_optionA.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionC.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionD.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionB.setBackgroundResource(R.drawable.oval_4);
+                viewHolder.let_optionC.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionD.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionA.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                if (question.getCorrectop() == 2) {
+                    question.setQuestiontag(1);
 
+                }else {
+                    question.setQuestiontag(0);
+                }
             }
         });
         viewHolder.let_optionC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                viewHolder.let_optionC.setTextColor(Color.parseColor("#EEEEEE"));
+                viewHolder.let_optionA.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionB.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionD.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionC.setBackgroundResource(R.drawable.oval_4);
+                viewHolder.let_optionB.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionD.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionA.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                if (question.getCorrectop() == 3) {
+                    question.setQuestiontag(1);
 
+                }else {
+                    question.setQuestiontag(0);
+                }
             }
         });
         viewHolder.let_optionD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                viewHolder.let_optionD.setTextColor(Color.parseColor("#EEEEEE"));
+                viewHolder.let_optionA.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionB.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionC.setTextColor(Color.parseColor("#1381D8"));
+                viewHolder.let_optionD.setBackgroundResource(R.drawable.oval_4);
+                viewHolder.let_optionC.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionB.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                viewHolder.let_optionA.setBackgroundResource(R.drawable.sel_homework_checkbox_bg);
+                if (question.getCorrectop() == 4) {
+                    question.setQuestiontag(1);
 
+                }else {
+                    question.setQuestiontag(0);
+                }
             }
         });
 

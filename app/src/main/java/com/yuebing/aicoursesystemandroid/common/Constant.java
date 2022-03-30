@@ -83,6 +83,10 @@ public class Constant {
      * publish exam
      */
     public static final String PUBLISH_EXAM = FORE_URL + "/publishexam?examid=";
+    /**
+     * commit exam
+     */
+    public static final String COMMIT_EXAM = FORE_URL + "/commitExam?grade=";
 
     /**
      * BODY类型
