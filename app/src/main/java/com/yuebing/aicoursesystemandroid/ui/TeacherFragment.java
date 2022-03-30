@@ -26,6 +26,7 @@ public class TeacherFragment extends Fragment {
     private ImageButton im_task;
     private ImageButton im_video;
     private ImageButton im_ppt;
+    private ImageButton im_exam;
 
 
     @NonNull
@@ -45,6 +46,7 @@ public class TeacherFragment extends Fragment {
         im_task = getView().findViewById(R.id.id_taskteacher);
         im_video = getView().findViewById(R.id.id_videoteacher);
         im_ppt = getView().findViewById(R.id.id_pptteacher);
+        im_exam = getView().findViewById(R.id.id_examteacher);
 
         // 创建课程
         im_create.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +82,15 @@ public class TeacherFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 new Thread(new PptListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), pptHandler)).start();
+
+            }
+        });
+
+        im_exam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), QuestionListActivity.class);
+                startActivity(intent);
 
             }
         });

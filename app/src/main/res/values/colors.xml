@@ -23,5 +23,6 @@
     <color name="colorPayHint">#999999</color>
     <color name="colorScreenBackground">#EEEEEE</color>
     <color name="colorButtonPressed">#A8E4AB</color>
+    <color name="es_green">#01AE66</color>
 
 </resources>

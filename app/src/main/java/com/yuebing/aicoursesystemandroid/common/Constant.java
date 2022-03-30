@@ -65,6 +65,16 @@ public class Constant {
     public static final String File_Path = FORE_URL + "/doc/ppt/";
 
     /**
+     * getexam
+     */
+    public static final String GET_EXAM_LIST = FORE_URL + "/getExamListByToken";
+
+    /**
+     * getquestion
+     */
+    public static final String GET_QUESTION_LIST = FORE_URL + "/getQuestionList?examid=";
+
+    /**
      * BODY类型
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");

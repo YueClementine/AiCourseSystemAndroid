@@ -6,12 +6,17 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/drawable/ppticon.xml" value="0.2490740740740741" />
+        <entry key="app/src/main/res/drawable/rect_4_line_green.xml" value="0.2625" />
+        <entry key="app/src/main/res/drawable/rect_4_solid_green.xml" value="0.2625" />
+        <entry key="app/src/main/res/drawable/sel_homework_checkbox_bg.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/acitivity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_examstudent.xml" value="0.3292572463768116" />
         <entry key="app/src/main/res/layout/activity_layout.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_pickstudents.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_pptcenter.xml" value="0.3013405153624665" />
+        <entry key="app/src/main/res/layout/activity_questionlist.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/activity_reg.xml" value="0.18854166666666666" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_studenttask.xml" value="0.3154602323503128" />
@@ -22,7 +27,9 @@
         <entry key="app/src/main/res/layout/activity_videocenter.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/layout/bottom.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_courses.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/item_examstudent.xml" value="0.3292572463768116" />
         <entry key="app/src/main/res/layout/item_ppt.xml" value="0.23434787309557129" />
+        <entry key="app/src/main/res/layout/item_question.xml" value="0.2917748917748918" />
         <entry key="app/src/main/res/layout/item_task.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_video.xml" value="0.1237859171468207" />
         <entry key="app/src/main/res/layout/layout_createcourse.xml" value="0.1765625" />
