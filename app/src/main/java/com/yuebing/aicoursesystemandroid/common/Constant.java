@@ -75,6 +75,11 @@ public class Constant {
     public static final String GET_QUESTION_LIST = FORE_URL + "/getQuestionList?examid=";
 
     /**
+     *
+     */
+    public static final String Teacher_GET_EXAM_LIST = FORE_URL + "/teacherGetExamList";
+
+    /**
      * BODY类型
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");

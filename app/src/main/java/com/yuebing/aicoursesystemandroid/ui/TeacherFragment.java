@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.task.GetCourseTask;
 import com.yuebing.aicoursesystemandroid.task.PptListTask;
+import com.yuebing.aicoursesystemandroid.task.TeacherGetExamTask;
 import com.yuebing.aicoursesystemandroid.task.VideoListTask;
 
 public class TeacherFragment extends Fragment {
@@ -89,9 +90,7 @@ public class TeacherFragment extends Fragment {
         im_exam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), QuestionListActivity.class);
-                startActivity(intent);
-
+                new Thread(new TeacherGetExamTask(getActivity().getIntent().getStringExtra("token"), examHandler));
             }
         });
 
@@ -159,6 +158,27 @@ public class TeacherFragment extends Fragment {
 
             Intent intent = new Intent(getActivity().getApplicationContext(), PptCenterActivity.class);
             intent.putExtra("pptlist", result);
+            intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
+
+            startActivity(intent);
+
+            return true;
+        }
+    });
+    private Handler examHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            String result = bundle.getString("result");
+
+
+
+            Intent intent = new Intent(getActivity().getApplicationContext(), TeacherExamPublishActivity.class);
+            intent.putExtra("examlist", result);
             intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
 
             startActivity(intent);

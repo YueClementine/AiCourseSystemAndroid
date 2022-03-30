@@ -8,4 +8,6 @@ public class Exam {
 
     private String examname;
 
+    private Integer ispublish;
+
 }
