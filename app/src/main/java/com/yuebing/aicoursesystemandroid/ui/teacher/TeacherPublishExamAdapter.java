@@ -1,7 +1,5 @@
-package com.yuebing.aicoursesystemandroid.ui;
+package com.yuebing.aicoursesystemandroid.ui.teacher;
 
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,8 +16,6 @@ import androidx.annotation.Nullable;
 
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.model.Exam;
-import com.yuebing.aicoursesystemandroid.model.ExamUserRel;
-import com.yuebing.aicoursesystemandroid.model.Task;
 import com.yuebing.aicoursesystemandroid.task.TeacherPublishExamTask;
 
 import java.util.List;

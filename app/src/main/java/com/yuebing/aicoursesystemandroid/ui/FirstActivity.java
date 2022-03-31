@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.yuebing.aicoursesystemandroid.R;
+import com.yuebing.aicoursesystemandroid.ui.teacher.TeacherFragment;
 
 public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
     //3个TAB的布局文件

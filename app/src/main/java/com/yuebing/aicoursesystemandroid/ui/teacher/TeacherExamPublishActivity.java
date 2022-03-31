@@ -1,4 +1,4 @@
-package com.yuebing.aicoursesystemandroid.ui;
+package com.yuebing.aicoursesystemandroid.ui.teacher;
 
 import android.os.Bundle;
 import android.widget.ListView;
@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.model.Exam;
-import com.yuebing.aicoursesystemandroid.model.TaskuserrelVO;
 import com.yuebing.aicoursesystemandroid.utils.JsonListUtil;
 
 import java.util.List;

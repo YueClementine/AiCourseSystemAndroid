@@ -1,4 +1,4 @@
-package com.yuebing.aicoursesystemandroid.ui;
+package com.yuebing.aicoursesystemandroid.ui.teacher;
 
 
 import android.content.Intent;
@@ -20,6 +20,10 @@ import com.yuebing.aicoursesystemandroid.task.GetCourseTask;
 import com.yuebing.aicoursesystemandroid.task.PptListTask;
 import com.yuebing.aicoursesystemandroid.task.TeacherGetExamTask;
 import com.yuebing.aicoursesystemandroid.task.VideoListTask;
+import com.yuebing.aicoursesystemandroid.ui.CreateCourseActivity;
+import com.yuebing.aicoursesystemandroid.ui.CreateTaskActivity;
+import com.yuebing.aicoursesystemandroid.ui.PptCenterActivity;
+import com.yuebing.aicoursesystemandroid.ui.VideoCenterActivity;
 
 public class TeacherFragment extends Fragment {
 
@@ -28,6 +32,8 @@ public class TeacherFragment extends Fragment {
     private ImageButton im_video;
     private ImageButton im_ppt;
     private ImageButton im_exam;
+    private ImageButton im_grade;
+
 
 
     @NonNull
@@ -48,6 +54,7 @@ public class TeacherFragment extends Fragment {
         im_video = getView().findViewById(R.id.id_videoteacher);
         im_ppt = getView().findViewById(R.id.id_pptteacher);
         im_exam = getView().findViewById(R.id.id_examteacher);
+        im_grade = getView().findViewById(R.id.id_grade_teacher);
 
         // 创建课程
         im_create.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +100,14 @@ public class TeacherFragment extends Fragment {
                 new Thread(new TeacherGetExamTask(getActivity().getIntent().getStringExtra("token"), examHandler)).start();
             }
         });
+
+        im_grade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new TeacherGetExamTask(getActivity().getIntent().getStringExtra("token"), gradeHandler)).start();
+            }
+        });
+
 
 
 
@@ -178,6 +193,27 @@ public class TeacherFragment extends Fragment {
 
 
             Intent intent = new Intent(getActivity().getApplicationContext(), TeacherExamPublishActivity.class);
+            intent.putExtra("examlist", result);
+            intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
+
+            startActivity(intent);
+
+            return true;
+        }
+    });
+    private Handler gradeHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            String result = bundle.getString("result");
+
+
+
+            Intent intent = new Intent(getActivity().getApplicationContext(), ViewStudentExamActivity.class);
             intent.putExtra("examlist", result);
             intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
 

@@ -58,8 +58,10 @@
         <activity android:name=".ui.PptCenterActivity" />
         <activity android:name=".ui.PdfActvity" />
         <activity android:name=".ui.QuestionListActivity" />
-        <activity android:name=".ui.TeacherExamPublishActivity" />
+        <activity android:name=".ui.teacher.TeacherExamPublishActivity" />
         <activity android:name=".ui.StudentExamCenter" />
+        <activity android:name=".ui.teacher.ViewStudentExamActivity" />
+        <activity android:name=".ui.teacher.ViewStudentGradeActivity" />
     </application>
     
 

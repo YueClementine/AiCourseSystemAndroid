@@ -34,6 +34,11 @@ public class Constant {
     public static final String GET_COURSE_BY_USERID = FORE_URL + "/teachertask/getCourseByTeacherId?teacherid=";
 
     /**
+     * get grade
+     */
+    public static final String GET_GRADE = FORE_URL + "/getGradeByExamid?examid=";
+
+    /**
      * 获取ppt
      */
     public static final String GET_PPT_BY_TOKEN = FORE_URL + "/getPptListByToken";

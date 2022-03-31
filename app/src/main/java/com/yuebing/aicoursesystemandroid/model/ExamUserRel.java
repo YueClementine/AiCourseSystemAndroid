@@ -17,4 +17,6 @@ public class ExamUserRel {
     private Integer grade;
 
     private String date;
+
+    private String username;
 }
