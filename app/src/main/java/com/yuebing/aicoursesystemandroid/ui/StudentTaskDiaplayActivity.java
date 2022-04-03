@@ -75,13 +75,11 @@ public class StudentTaskDiaplayActivity extends AppCompatActivity {
             }
             String result = bundle.getString("result");
 
+            Toast.makeText(getApplicationContext(), "提交成功", Toast.LENGTH_SHORT).show();
 
 
-            Intent intent = new Intent(getApplicationContext(), StudentTaskActivity.class);
-            intent.putExtra("tasklist", result);
-            intent.putExtra("token", getIntent().getStringExtra("token"));
 
-            startActivity(intent);
+
 
             return true;
         }

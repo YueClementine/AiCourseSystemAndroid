@@ -1,23 +1,27 @@
 package com.yuebing.aicoursesystemandroid.task;
 
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
 import com.yuebing.aicoursesystemandroid.common.Constant;
-import com.yuebing.aicoursesystemandroid.model.Response;
 import com.yuebing.aicoursesystemandroid.service.CommonNetService;
 
 import java.io.IOException;
 
-public class PptListTask implements Runnable {
+public class TeacherGetMessageTask implements Runnable{
+
+    private String groupname;
     private String token;
 
     private Handler handler;
 
-    public PptListTask( String token, Handler handler) {
+    private int groupid;
 
-
+    public TeacherGetMessageTask(String groupname, int discussid, String token, Handler handler) {
+        this.groupname = groupname;
+        this.groupid = discussid;
         this.handler = handler;
         this.token = token;
     }
@@ -27,11 +31,12 @@ public class PptListTask implements Runnable {
 
         try {
 
-            String result = CommonNetService.getByToken(Constant.GET_PPT_BY_TOKEN, token);
+            String result = CommonNetService.getByToken(Constant.TEACHER_GET_MESSAGE + groupid, token);
 
 
             Bundle bundle = new Bundle();
             bundle.putString("result", result);
+            bundle.putString("groupname", groupname);
             Message message = new Message();
             message.setData(bundle);
 

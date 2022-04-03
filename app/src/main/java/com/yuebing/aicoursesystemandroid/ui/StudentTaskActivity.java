@@ -1,6 +1,7 @@
 package com.yuebing.aicoursesystemandroid.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.TextPaint;
@@ -29,6 +30,7 @@ public class StudentTaskActivity extends AppCompatActivity {
 
     private ListView lv_studenttask;
     private TextView tv_finishnum;
+    private int unfinishnum = 0;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,9 +43,19 @@ public class StudentTaskActivity extends AppCompatActivity {
         taskuserrelVOList = JsonListUtil.getObjectList(tasklistjson, TaskuserrelVO.class);
 
 
+        for (int i = 0; i < taskuserrelVOList.size(); i++) {
+            if (taskuserrelVOList.get(i).getStatus() == 0) {
+                unfinishnum++;
+
+            }
+        }
 
         tv_finishnum = findViewById(R.id.tv_undoneTaskNum);
+        if (unfinishnum != 0) {
+            tv_finishnum.setText("您有" + unfinishnum + "个任务未完成");
+            tv_finishnum.setTextColor(Color.RED);
 
+        }
         lv_studenttask = findViewById(R.id.lv_studenttask);
 
 

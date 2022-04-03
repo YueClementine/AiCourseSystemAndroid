@@ -12,12 +12,10 @@ import java.io.IOException;
 
 public class VideoListTask implements Runnable {
     private String token;
-    private long teacherid;
+
     private Handler handler;
 
-    public VideoListTask(long teacherid, String token, Handler handler) {
-
-        this.teacherid = teacherid;
+    public VideoListTask(String token, Handler handler) {
         this.handler = handler;
         this.token = token;
     }

@@ -1,4 +1,4 @@
-package com.yuebing.aicoursesystemandroid.ui;
+package com.yuebing.aicoursesystemandroid.ui.teacher;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.task.CreateCourseTask;
+import com.yuebing.aicoursesystemandroid.ui.PickStudentsActivity;
 
 import top.androidman.SuperButton;
 

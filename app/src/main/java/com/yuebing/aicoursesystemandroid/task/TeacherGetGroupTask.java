@@ -5,19 +5,20 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.yuebing.aicoursesystemandroid.common.Constant;
-import com.yuebing.aicoursesystemandroid.model.Response;
 import com.yuebing.aicoursesystemandroid.service.CommonNetService;
 
 import java.io.IOException;
 
-public class PptListTask implements Runnable {
+public class TeacherGetGroupTask implements Runnable{
     private String token;
 
     private Handler handler;
 
-    public PptListTask( String token, Handler handler) {
+    private int discussid;
 
+    public TeacherGetGroupTask(int discussid, String token, Handler handler) {
 
+        this.discussid = discussid;
         this.handler = handler;
         this.token = token;
     }
@@ -27,11 +28,12 @@ public class PptListTask implements Runnable {
 
         try {
 
-            String result = CommonNetService.getByToken(Constant.GET_PPT_BY_TOKEN, token);
+            String result = CommonNetService.getByToken(Constant.Teacher_GET_GROUP + discussid, token);
 
 
             Bundle bundle = new Bundle();
             bundle.putString("result", result);
+            bundle.putInt("discussid", discussid);
             Message message = new Message();
             message.setData(bundle);
 
@@ -49,4 +51,6 @@ public class PptListTask implements Runnable {
             handler.sendMessage(message);
         }
     }
+
+
 }

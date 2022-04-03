@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/id_discuss"
+            android:id="@+id/id_discuss_student"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:clickable="false"

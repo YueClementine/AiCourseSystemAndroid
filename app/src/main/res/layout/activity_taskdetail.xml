@@ -13,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:text="请及时完成任务"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +26,8 @@
         android:layout_marginTop="46dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/finishtaskintime" />
@@ -33,13 +35,15 @@
     <TextView
         android:id="@+id/tv_displaytask"
         android:layout_width="380dp"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:gravity="top"
         android:singleLine="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_taskdisplayTitle" />
@@ -48,12 +52,12 @@
         android:id="@+id/bt_commitfinishTask"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        app:color_normal="@color/colorLoginHint"
+        app:color_normal="#2C812F"
         app:corner="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:text="确认完成"
+        app:text="创建笔记"
         app:textColor="@color/colorBackground"
         app:textSize="24sp" />
 

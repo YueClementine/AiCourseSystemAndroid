@@ -18,10 +18,9 @@ import androidx.fragment.app.Fragment;
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.task.GetCourseTask;
 import com.yuebing.aicoursesystemandroid.task.PptListTask;
+import com.yuebing.aicoursesystemandroid.task.TeacherGetDiscussTask;
 import com.yuebing.aicoursesystemandroid.task.TeacherGetExamTask;
 import com.yuebing.aicoursesystemandroid.task.VideoListTask;
-import com.yuebing.aicoursesystemandroid.ui.CreateCourseActivity;
-import com.yuebing.aicoursesystemandroid.ui.CreateTaskActivity;
 import com.yuebing.aicoursesystemandroid.ui.PptCenterActivity;
 import com.yuebing.aicoursesystemandroid.ui.VideoCenterActivity;
 
@@ -33,6 +32,7 @@ public class TeacherFragment extends Fragment {
     private ImageButton im_ppt;
     private ImageButton im_exam;
     private ImageButton im_grade;
+    private ImageButton im_discuss;
 
 
 
@@ -55,6 +55,7 @@ public class TeacherFragment extends Fragment {
         im_ppt = getView().findViewById(R.id.id_pptteacher);
         im_exam = getView().findViewById(R.id.id_examteacher);
         im_grade = getView().findViewById(R.id.id_grade_teacher);
+        im_discuss = getView().findViewById(R.id.id_discuss_student);
 
         // 创建课程
         im_create.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +82,7 @@ public class TeacherFragment extends Fragment {
         im_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new VideoListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), videoHandler)).start();
+                new Thread(new VideoListTask(getActivity().getIntent().getStringExtra("token"), videoHandler)).start();
 
             }
         });
@@ -89,7 +90,7 @@ public class TeacherFragment extends Fragment {
         im_ppt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new PptListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), pptHandler)).start();
+                new Thread(new PptListTask(getActivity().getIntent().getStringExtra("token"), pptHandler)).start();
 
             }
         });
@@ -105,6 +106,13 @@ public class TeacherFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 new Thread(new TeacherGetExamTask(getActivity().getIntent().getStringExtra("token"), gradeHandler)).start();
+            }
+        });
+
+        im_discuss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new TeacherGetDiscussTask(getActivity().getIntent().getStringExtra("token"), discussHandler)).start();
             }
         });
 
@@ -215,6 +223,27 @@ public class TeacherFragment extends Fragment {
 
             Intent intent = new Intent(getActivity().getApplicationContext(), ViewStudentExamActivity.class);
             intent.putExtra("examlist", result);
+            intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
+
+            startActivity(intent);
+
+            return true;
+        }
+    });
+    private Handler discussHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            Bundle bundle = message.getData();
+            if (bundle.getString("error") != null) {
+                Toast.makeText(getContext(), bundle.getString("error"), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            String result = bundle.getString("result");
+
+
+
+            Intent intent = new Intent(getActivity().getApplicationContext(), CreateDiscussActivity.class);
+            intent.putExtra("discusslist", result);
             intent.putExtra("token", getActivity().getIntent().getStringExtra("token"));
 
             startActivity(intent);

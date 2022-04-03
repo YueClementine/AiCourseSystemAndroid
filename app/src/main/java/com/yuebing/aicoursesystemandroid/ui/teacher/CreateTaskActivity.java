@@ -1,4 +1,4 @@
-package com.yuebing.aicoursesystemandroid.ui;
+package com.yuebing.aicoursesystemandroid.ui.teacher;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.yuebing.aicoursesystemandroid.R;
 import com.yuebing.aicoursesystemandroid.model.Course;
+import com.yuebing.aicoursesystemandroid.ui.CourseDisplayAdapter;
+import com.yuebing.aicoursesystemandroid.ui.EditTaskActivity;
 import com.yuebing.aicoursesystemandroid.utils.JsonListUtil;
 
 import java.util.ArrayList;

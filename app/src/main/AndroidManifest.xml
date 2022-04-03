@@ -47,9 +47,9 @@
         </activity>
         <activity android:name=".ui.FirstActivity" />
         <activity android:name=".ui.RegisterActivity" />
-        <activity android:name=".ui.CreateCourseActivity" />
+        <activity android:name=".ui.teacher.CreateCourseActivity" />
         <activity android:name=".ui.PickStudentsActivity" />
-        <activity android:name=".ui.CreateTaskActivity" />
+        <activity android:name=".ui.teacher.CreateTaskActivity" />
         <activity android:name=".ui.EditTaskActivity" />
         <activity android:name=".ui.StudentTaskActivity" />
         <activity android:name=".ui.StudentTaskDiaplayActivity" />
@@ -62,6 +62,14 @@
         <activity android:name=".ui.StudentExamCenter" />
         <activity android:name=".ui.teacher.ViewStudentExamActivity" />
         <activity android:name=".ui.teacher.ViewStudentGradeActivity" />
+        <activity android:name=".ui.teacher.CreateDiscussActivity" />
+        <activity android:name=".ui.teacher.ViewGroupActivity" />
+        <activity android:name=".ui.teacher.NewDiscussActivity" />
+        <activity android:name=".ui.teacher.ViewDialogActivity" />
+        <activity android:name=".ui.student.StudentDiscussDisplayActivity" />
+        <activity android:name=".ui.student.StudentMessageActivity" />
+        <activity android:name=".ui.teacher.AddPdfActivity" />
+        <activity android:name=".ui.teacher.AddVideoActivity" />
     </application>
     
 

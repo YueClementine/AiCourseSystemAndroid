@@ -7,7 +7,7 @@ import okhttp3.MediaType;
  */
 public class Constant {
 
-    public static final String FORE_URL = "http://10.133.169.250:8888";
+    public static final String FORE_URL = "http://192.168.215.225:8888";
     /**
      * 查询是否已注册URL
      */
@@ -88,6 +88,7 @@ public class Constant {
      * publish exam
      */
     public static final String PUBLISH_EXAM = FORE_URL + "/publishexam?examid=";
+
     /**
      * commit exam
      */
@@ -97,5 +98,25 @@ public class Constant {
      * BODY类型
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+
+    /**
+     * teacher get discuss
+     */
+    public static final String Teacher_GET_DISCUSS = FORE_URL + "/getDiscussList";
+
+    /**
+     * teacher get group
+     */
+    public static final String Teacher_GET_GROUP = FORE_URL + "/getGroupListByDiscussid?discussid=";
+
+    /**
+     * teachergetmessage
+     */
+    public static final String TEACHER_GET_MESSAGE = FORE_URL + "/getMessageListByGroupid?groupid=";
+
+    /**
+     * finishdiscuss
+     */
+    public static final String FINISHDISCUSS = FORE_URL + "/finishDiscuss?discussid=";
 
 }

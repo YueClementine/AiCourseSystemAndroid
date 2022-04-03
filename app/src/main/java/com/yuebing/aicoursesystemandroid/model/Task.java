@@ -4,10 +4,31 @@ import lombok.Data;
 
 @Data
 public class Task {
-    private String title;
+    private Integer taskid;
+
     private String task;
-    private int courseid;
+
+    private Integer courseid;
+
     private String coursename;
+
+    private String title;
+
+    private Integer videoid;
+
+    private String videoname;
+
+    private String videoaddress;
+
+    private Integer pptid;
+
+    private String pptname;
+
+    private String pptaddress;
+
+    private Integer addvideo;
+
+    private Integer addppt;
 
 
 }

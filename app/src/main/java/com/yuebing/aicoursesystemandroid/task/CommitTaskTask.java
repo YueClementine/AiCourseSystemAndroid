@@ -17,6 +17,14 @@ import java.io.IOException;
 
 public class CommitTaskTask implements Runnable {
 
+    private int addvideo;
+    private int addppt;
+    private String videopath;
+    private String pptpath;
+    private String videoname;
+    private String pptname;
+
+
     private int courseid;
 
     private String title;
@@ -26,8 +34,13 @@ public class CommitTaskTask implements Runnable {
 
     private String token;
 
-    public CommitTaskTask(int courseid, String coursename, String taskContent, String title, String token, Handler handler) {
-
+    public CommitTaskTask(int addvideo, int addppt, String videoname, String videopath, String pptname, String pptpath, int courseid, String coursename, String taskContent, String title, String token, Handler handler) {
+        this.addvideo = addvideo;
+        this.addppt = addppt;
+        this.videoname = videoname;
+        this.pptname = pptname;
+        this.videopath = videopath;
+        this.pptpath = pptpath;
         this.courseid = courseid;
         this.coursename = coursename;
         this.taskContent = taskContent;
@@ -44,6 +57,13 @@ public class CommitTaskTask implements Runnable {
             task.setTask(taskContent);
             task.setCoursename(coursename);
             task.setTitle(title);
+            task.setAddppt(addppt);
+            task.setAddvideo(addvideo);
+            task.setVideoname(videoname);
+            task.setVideoaddress(videopath);
+            task.setPptaddress(pptpath);
+            task.setPptname(pptname);
+
             Gson gson = new Gson();
             String json = gson.toJson(task);
 

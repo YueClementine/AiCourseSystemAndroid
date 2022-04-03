@@ -21,6 +21,7 @@ import com.yuebing.aicoursesystemandroid.task.ExamListTask;
 import com.yuebing.aicoursesystemandroid.task.PptListTask;
 import com.yuebing.aicoursesystemandroid.task.StudentTaskTask;
 import com.yuebing.aicoursesystemandroid.task.VideoListTask;
+import com.yuebing.aicoursesystemandroid.ui.student.StudentDiscussDisplayActivity;
 
 public class StudentMainFragment extends Fragment {
 
@@ -28,6 +29,7 @@ public class StudentMainFragment extends Fragment {
     private ImageButton im_studentVideo;
     private ImageButton im_studentPpt;
     private ImageButton im_studentExam;
+    private ImageButton im_discuss;
 
     @NonNull
     @Override
@@ -45,6 +47,10 @@ public class StudentMainFragment extends Fragment {
         im_studentVideo = getActivity().findViewById(R.id.id_video);
         im_studentExam = getActivity().findViewById(R.id.id_exam);
 
+        im_discuss = getActivity().findViewById(R.id.id_discuss_student);
+
+
+
 
 
         im_studentTask.setOnClickListener(new View.OnClickListener() {
@@ -57,14 +63,14 @@ public class StudentMainFragment extends Fragment {
         im_studentVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new VideoListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), videoHandler)).start();
+                new Thread(new VideoListTask(getActivity().getIntent().getStringExtra("token"), videoHandler)).start();
             }
         });
 
         im_studentPpt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(new PptListTask(getActivity().getIntent().getLongExtra("userid", 1L), getActivity().getIntent().getStringExtra("token"), pptHandler)).start();
+                new Thread(new PptListTask(getActivity().getIntent().getStringExtra("token"), pptHandler)).start();
 
             }
         });
@@ -73,6 +79,15 @@ public class StudentMainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 new Thread(new ExamListTask(getActivity().getIntent().getStringExtra("token"), examHandler)).start();
+            }
+        });
+
+        im_discuss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), StudentDiscussDisplayActivity.class);
+                startActivity(intent);
+
             }
         });
 

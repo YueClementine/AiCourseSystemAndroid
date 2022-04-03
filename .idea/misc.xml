@@ -13,16 +13,24 @@
         <entry key="app/src/main/res/drawable/rect_4_solid_green.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/sel_homework_checkbox_bg.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/acitivity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_choose_pdf_upload.xml" value="0.2553037665618634" />
+        <entry key="app/src/main/res/layout/activity_choose_video_upload.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_dialog.xml" value="0.22239583333333332" />
+        <entry key="app/src/main/res/layout/activity_discuss_display.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_examstudent.xml" value="0.3292572463768116" />
+        <entry key="app/src/main/res/layout/activity_group_display.xml" value="0.22239583333333332" />
         <entry key="app/src/main/res/layout/activity_layout.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_new_discuss.xml" value="0.5172974043220874" />
         <entry key="app/src/main/res/layout/activity_pdf.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_pickstudents.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_pptcenter.xml" value="0.3013405153624665" />
         <entry key="app/src/main/res/layout/activity_questionlist.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_reg.xml" value="0.18854166666666666" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_student_discuss.xml" value="0.18513656342308785" />
+        <entry key="app/src/main/res/layout/activity_student_message.xml" value="0.23463957426221577" />
         <entry key="app/src/main/res/layout/activity_studenttask.xml" value="0.3154602323503128" />
         <entry key="app/src/main/res/layout/activity_taskdetail.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/activity_taskteacher.xml" value="0.17552083333333332" />
@@ -32,9 +40,14 @@
         <entry key="app/src/main/res/layout/activity_videocenter.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/layout/activity_viewstudent_exam.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_viewstudent_grade.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/bottom.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/bottom.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_aimoment.xml" value="0.16168478260869565" />
         <entry key="app/src/main/res/layout/item_courses.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/item_dialog.xml" value="0.691775349300336" />
+        <entry key="app/src/main/res/layout/item_discuss_teacher.xml" value="0.22837440926024585" />
         <entry key="app/src/main/res/layout/item_examstudent.xml" value="0.3292572463768116" />
+        <entry key="app/src/main/res/layout/item_group_display.xml" value="0.22239583333333332" />
+        <entry key="app/src/main/res/layout/item_new_discuss_courses.xml" value="0.22239583333333332" />
         <entry key="app/src/main/res/layout/item_ppt.xml" value="0.23434787309557129" />
         <entry key="app/src/main/res/layout/item_question.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_task.xml" value="0.5" />
@@ -43,7 +56,7 @@
         <entry key="app/src/main/res/layout/item_teacherviewstuentgrade.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_video.xml" value="0.1237859171468207" />
         <entry key="app/src/main/res/layout/layout_createcourse.xml" value="0.1765625" />
-        <entry key="app/src/main/res/layout/layout_edittask.xml" value="0.24738076849888208" />
+        <entry key="app/src/main/res/layout/layout_edittask.xml" value="0.4436183395291202" />
         <entry key="app/src/main/res/layout/navigationbar.xml" value="0.33" />
         <entry key="app/src/main/res/layout/tab1.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/tab2.xml" value="0.27943840579710144" />
