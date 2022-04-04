@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/layout/acitivity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_choose_pdf_upload.xml" value="0.2553037665618634" />
         <entry key="app/src/main/res/layout/activity_choose_video_upload.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_comment.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/layout/activity_dialog.xml" value="0.22239583333333332" />
         <entry key="app/src/main/res/layout/activity_discuss_display.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_examstudent.xml" value="0.3292572463768116" />
@@ -32,7 +33,7 @@
         <entry key="app/src/main/res/layout/activity_student_discuss.xml" value="0.18513656342308785" />
         <entry key="app/src/main/res/layout/activity_student_message.xml" value="0.23463957426221577" />
         <entry key="app/src/main/res/layout/activity_studenttask.xml" value="0.3154602323503128" />
-        <entry key="app/src/main/res/layout/activity_taskdetail.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/activity_taskdetail.xml" value="0.35618892788775797" />
         <entry key="app/src/main/res/layout/activity_taskteacher.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/activity_teacherpublishexam.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_testnav.xml" value="0.18854166666666666" />
@@ -41,7 +42,8 @@
         <entry key="app/src/main/res/layout/activity_viewstudent_exam.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_viewstudent_grade.xml" value="0.25" />
         <entry key="app/src/main/res/layout/bottom.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_aimoment.xml" value="0.16168478260869565" />
+        <entry key="app/src/main/res/layout/item_aimoment.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_comment.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/layout/item_courses.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/item_dialog.xml" value="0.691775349300336" />
         <entry key="app/src/main/res/layout/item_discuss_teacher.xml" value="0.22837440926024585" />
@@ -55,6 +57,7 @@
         <entry key="app/src/main/res/layout/item_teacherviewstudentexam.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/item_teacherviewstuentgrade.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_video.xml" value="0.1237859171468207" />
+        <entry key="app/src/main/res/layout/layout_comment.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/layout/layout_createcourse.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/layout_edittask.xml" value="0.4436183395291202" />
         <entry key="app/src/main/res/layout/navigationbar.xml" value="0.33" />
@@ -62,7 +65,7 @@
         <entry key="app/src/main/res/layout/tab2.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/tab3.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/tabstudent.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/tabteacher.xml" value="0.33089693753071137" />
+        <entry key="app/src/main/res/layout/tabteacher.xml" value="0.38645833333333335" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14375" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.1390625" />

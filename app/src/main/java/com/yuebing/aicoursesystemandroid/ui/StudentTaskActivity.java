@@ -46,7 +46,6 @@ public class StudentTaskActivity extends AppCompatActivity {
         for (int i = 0; i < taskuserrelVOList.size(); i++) {
             if (taskuserrelVOList.get(i).getStatus() == 0) {
                 unfinishnum++;
-
             }
         }
 
@@ -70,6 +69,14 @@ public class StudentTaskActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(getApplicationContext(), StudentTaskDiaplayActivity.class);
+                intent.putExtra("addvideo", taskuserrelVO.getAddvideo());
+                intent.putExtra("addppt", taskuserrelVO.getAddppt());
+                intent.putExtra("videoname", taskuserrelVO.getVideoname());
+                intent.putExtra("pptname", taskuserrelVO.getPptname());
+                intent.putExtra("videoaddress", taskuserrelVO.getVideoaddress());
+                intent.putExtra("pptaddress", taskuserrelVO.getPptaddress());
+                intent.putExtra("videoid", taskuserrelVO.getVideoid());
+                intent.putExtra("pptid", taskuserrelVO.getPptid());
                 intent.putExtra("taskdetail", taskuserrelVO.getTask());
                 intent.putExtra("tasktitle", taskuserrelVO.getTitle());
                 intent.putExtra("userid", taskuserrelVO.getUserid());

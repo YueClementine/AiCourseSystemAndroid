@@ -7,7 +7,7 @@ import okhttp3.MediaType;
  */
 public class Constant {
 
-    public static final String FORE_URL = "http://192.168.215.225:8888";
+    public static final String FORE_URL = "http://10.133.158.16:8888";
     /**
      * 查询是否已注册URL
      */
@@ -47,6 +47,12 @@ public class Constant {
      *
      */
     public static final String CREATE_TASK = FORE_URL + "/teachertask/createTask";
+
+    /**
+     * create note
+     */
+    public static final String CREATE_NOTE = FORE_URL + "/createNote";
+
     /**
      *
      */
@@ -118,5 +124,12 @@ public class Constant {
      * finishdiscuss
      */
     public static final String FINISHDISCUSS = FORE_URL + "/finishDiscuss?discussid=";
+
+    /**
+     * getallnotes
+     */
+    public static final String GET_ALL_NOTES = FORE_URL + "/getAllNotes";
+
+
 
 }
